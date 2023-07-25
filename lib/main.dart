@@ -62,7 +62,7 @@ class _SIFormState extends State<SIForm> {
                     keyboardType: TextInputType.number,
                     style: textStyle,
                     controller: principalController,
-                    validator: ( value) {
+                    validator: (value) {
                       if (value!.isEmpty) {
                         return "please enter principle amount";
                       }
@@ -71,9 +71,7 @@ class _SIFormState extends State<SIForm> {
                         labelText: 'Principal ',
                         hintText: 'Enter principal eg:1000',
                         labelStyle: textStyle,
-                        errorStyle: TextStyle(
-                          color: Colors.green
-                        ),
+                        errorStyle: TextStyle(color: Colors.green),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         )),
@@ -86,8 +84,8 @@ class _SIFormState extends State<SIForm> {
                       keyboardType: TextInputType.number,
                       style: textStyle,
                       controller: roiController,
-                      validator: (value){
-                        if(value!.isEmpty){
+                      validator: (value) {
+                        if (value!.isEmpty) {
                           return 'please enter rate of interest';
                         }
                       },
@@ -95,9 +93,7 @@ class _SIFormState extends State<SIForm> {
                           labelText: 'Rate of interest',
                           hintText: 'in percent %',
                           labelStyle: textStyle,
-                          errorStyle: TextStyle(
-                              color: Colors.green
-                          ),
+                          errorStyle: TextStyle(color: Colors.green),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           )),
@@ -112,8 +108,8 @@ class _SIFormState extends State<SIForm> {
                           keyboardType: TextInputType.number,
                           style: textStyle,
                           controller: termsController,
-                          validator: (value){
-                            if(value!.isEmpty){
+                          validator: (value) {
+                            if (value!.isEmpty) {
                               return 'please enter time';
                             }
                           },
@@ -121,9 +117,7 @@ class _SIFormState extends State<SIForm> {
                               labelText: 'Terms',
                               hintText: 'in years',
                               labelStyle: textStyle,
-                              errorStyle: TextStyle(
-                                  color: Colors.green
-                              ),
+                              errorStyle: TextStyle(color: Colors.green),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5.0),
                               )),
@@ -152,24 +146,24 @@ class _SIFormState extends State<SIForm> {
                         Expanded(
                             child: ElevatedButton(
                           // color:Theme.of(context).primaryColorLight,
-                          style:
-                              ElevatedButton.styleFrom(primary: Colors.indigoAccent),
+                          style: ElevatedButton.styleFrom(primary: Colors.indigoAccent),
+                         // ElevatedButton.styleFrom(primary: Colors.indigo),
                           child: Text(
                             "Calulate",
                             textScaleFactor: 1.4,
                           ),
                           onPressed: () {
                             setState(() {
-                              if(_formKey.currentState!.validate()){
-                              this.displayresult = _calculateTotalReturns();
-                            }});
+                              if (_formKey.currentState!.validate()) {
+                                this.displayresult = _calculateTotalReturns();
+                              }
+                            });
                           },
                         )),
                         Container(width: _minimumPadding),
                         Expanded(
                             child: ElevatedButton(
-                          style:
-                              ElevatedButton.styleFrom(primary: Colors.grey),
+                          style: ElevatedButton.styleFrom(primary: Colors.grey),
                           child: Text(
                             "Reset",
                             style: textStyle,
