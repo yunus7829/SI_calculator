@@ -41,7 +41,7 @@ class _SIFormState extends State<SIForm> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle? textStyle = Theme.of(context).textTheme.headline6;
+    TextStyle? textStyle = Theme.of(context).textTheme.titleLarge;
     return Scaffold(
       //resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -66,6 +66,7 @@ class _SIFormState extends State<SIForm> {
                       if (value!.isEmpty) {
                         return "please enter principle amount";
                       }
+                      return null;
                     },
                     decoration: InputDecoration(
                         labelText: 'Principal ',
@@ -88,6 +89,7 @@ class _SIFormState extends State<SIForm> {
                         if (value!.isEmpty) {
                           return 'please enter rate of interest';
                         }
+                        return null;
                       },
                       decoration: InputDecoration(
                           labelText: 'Rate of interest',
@@ -112,6 +114,7 @@ class _SIFormState extends State<SIForm> {
                             if (value!.isEmpty) {
                               return 'please enter time';
                             }
+                            return null;
                           },
                           decoration: InputDecoration(
                               labelText: 'Terms',
@@ -146,8 +149,9 @@ class _SIFormState extends State<SIForm> {
                         Expanded(
                             child: ElevatedButton(
                           // color:Theme.of(context).primaryColorLight,
-                          style: ElevatedButton.styleFrom(primary: Colors.indigoAccent),
-                         // ElevatedButton.styleFrom(primary: Colors.indigo),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.indigoAccent),
+                          // ElevatedButton.styleFrom(primary: Colors.indigo),
                           child: Text(
                             "Calulate",
                             textScaleFactor: 1.4,
@@ -163,7 +167,7 @@ class _SIFormState extends State<SIForm> {
                         Container(width: _minimumPadding),
                         Expanded(
                             child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(primary: Colors.grey),
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.grey),
                           child: Text(
                             "Reset",
                             style: textStyle,
